@@ -1,0 +1,16 @@
+/* Force the header to expand for your larger logo */
+header .nav-container {
+  @apply py-4; /* Adds more vertical breathing room */
+  min-height: 100px; /* Adjust this until your logo looks perfect */
+}
+
+.logo img {
+  max-height: none !important; /* Prevents theme from shrinking it */
+  object-fit: contain;
+}
+
+article strong, 
+article b {
+  color: var(--text-strong);
+  font-weight: 800; /* Extra bold */
+}

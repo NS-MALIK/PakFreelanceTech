@@ -1,0 +1,28 @@
+---
+export interface Props {
+  text: string;
+  type?: "discount" | "featured" | "price";
+}
+
+const { text, type = "discount" } = Astro.props;
+
+// Colors mapping
+const colors = {
+  discount: "bg-green-500/10 text-green-600 border-green-500/20",
+  featured: "bg-blue-500/10 text-blue-600 border-blue-500/20",
+  price: "bg-orange-500/10 text-orange-600 border-orange-500/20",
+};
+---
+
+<span class={`inline-block px-3 py-1 text-xs font-bold uppercase tracking-widest border rounded-full mb-2 ${colors[type]}`}>
+  {text}
+</span>
+
+<style>
+  span {
+    /* Ensures it aligns nicely with the button below it */
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+</style>
