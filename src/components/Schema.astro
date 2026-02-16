@@ -1,0 +1,23 @@
+---
+const { title, description, pubDatetime, modDatetime, author, slug } = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "description": description,
+  "datePublished": pubDatetime,
+  "dateModified": modDatetime || pubDatetime,
+  "author": {
+    "@type": "Person",
+    "name": author,
+    "jobTitle": "Cybersecurity & DevOps Expert",
+    "url": "https://pak-freelance-tech.vercel.app/about"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `https://pak-freelance-tech.vercel.app/posts/${slug}`
+  }
+};
+---
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

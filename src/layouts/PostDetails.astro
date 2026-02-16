@@ -16,7 +16,7 @@ import IconChevronRight from "@/assets/icons/IconChevronRight.svg";
 import AuthorBox from "../components/AuthorBox.astro";
 import { render } from "astro:content";
 import { SITE } from "@/config";
-
+import Schema from "@/components/Schema.astro";
 type Props = {
   post: CollectionEntry<"blog">;
   posts: CollectionEntry<"blog">[];
@@ -86,7 +86,7 @@ const nextPost =
   currentPostIndex !== allPosts.length ? allPosts[currentPostIndex + 1] : null;
   const isAffiliatePost = post.data.tags.includes("affiliate");
 ---
-
+<Schema />
 <Layout {...layoutProps}>
   <Header />
   <BackButton />
